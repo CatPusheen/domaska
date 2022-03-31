@@ -12,11 +12,38 @@ const abilitiesName = abilities.map((el)=> {
     return name
 })
 
-return new Pokemon(name, abilitiesName,experience, image)
+const poke = new Pokemon(name, abilitiesName,experience, image)
+return poke;
 })
 
+
+
+const cardlistAdd = document.querySelector('.card-list')
+
+const addRandomCard = (pokemonList) => {
+    const cardAdd = document.querySelector('.card')
+    const cloneCardAdd = cardAdd.cloneNode(true)
+    const title = cloneCardAdd.querySelector('h3');
+    const image = cloneCardAdd.querySelector('img');
+    const propertiesText = cloneCardAdd.querySelector('.properties p')
+    const description = cloneCardAdd.querySelector(".description")
+    title.innerText = pokemonList.name;
+    image.src = pokemonList.image;
+    propertiesText.innerText = `Experience ${pokemonList.experience}`;
+    
+    description.innerHTML = `
+    <h4> Abilities: </h4>
+    <ul>
+    ${pokemonList.abilities.map((el) => `<li> ${el} </li>`).join('')}
+    </ul>
+    `
+    cardlistAdd.append(cloneCardAdd)
+    };
 
 btn.addEventListener('click',(event)=>{
-const cardlist = document.querySelector('.card-list')
-cardlist.append(pokemonsList)
-})
+    const random = pokemonsList[Math.floor(Math.random() * pokemonsList.length)]
+    addRandomCard(random)
+         })
+
+
+  
