@@ -5,7 +5,33 @@ font-family: 'Red Hat Mono', monospace;
 position: relative;
 }
 
-button{
+
+
+form{
+    width: 190px;
+    height: 30px;
+    border-radius: 50px;
+    position: fixed;
+    top: 10px;
+    right: 25px;
+    border: solid 8px yellow;
+    background-color: yellow;
+}
+
+.btnform{
+background-image: url(image/lupa.png);
+background-size: contain;
+width: 20px;
+height: 20px;
+}
+
+.text{
+    position: relative;
+    margin-top: 5px;
+    
+}
+
+.butt{
     width: 100px;
     height: 100px;
     border-radius: 50px;
